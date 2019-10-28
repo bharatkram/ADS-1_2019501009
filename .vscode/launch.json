@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Sum",
+            "request": "launch",
+            "mainClass": "Sum",
+            "projectName": "ADS-1_2019501009_3aba6eba"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LBD",
+            "request": "launch",
+            "mainClass": "LBD",
+            "projectName": "ADS-1_2019501009_3aba6eba"
+        }
+    ]
+}
