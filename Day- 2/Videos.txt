@@ -1,0 +1,6 @@
+http://iiitdev.msitprogram.net/videos/stacks.mp4
+http://iiitdev.msitprogram.net/videos/resizing_arrays.mp4
+http://iiitdev.msitprogram.net/videos/queues.mp4
+http://iiitdev.msitprogram.net/videos/generics.mp4
+http://iiitdev.msitprogram.net/videos/iterators.mp4
+http://iiitdev.msitprogram.net/videos/stack_and_queue_applications.mp4

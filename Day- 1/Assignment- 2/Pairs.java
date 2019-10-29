@@ -2,6 +2,10 @@ final class Pairs {
 
     private Pairs() {
     }
+    /**
+     * main function.
+     * @param args main function arguments.
+     */
     public static void main(final String[] args) {
         final int[] arr1 = {1, 2, 3, 4, 5};
         final int[] arr2 = {1, 3, 4, 5, 6};

@@ -26,6 +26,7 @@ public class LinkedListTest {
 
         // Test case : 1
         linkedlist.add("Hello World");
+        System.out.println(linkedlist.toString());
         if ("[Hello World]".equals(linkedlist.toString())) {
             System.out.println("Test case 1 passed");
             count++;

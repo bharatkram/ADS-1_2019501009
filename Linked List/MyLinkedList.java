@@ -1,27 +1,53 @@
 /**
  * List of my linkedlists.
  */
-class MyLinkedList {
+public class MyLinkedList {
+    Node head;
     /**
      * Constructs an empty list with size initialized to zero.
      */
-    public MyLinkedList() {}
+    public MyLinkedList() {
+        head = null;
+    }
+
     /**
      * Appends the specified element to the end of this list.
      *
-     * @param      data  The data
+     * @param data  The data
      */
-    public void add(String data){}
+    public void add(String data){
+        if (head == null) {
+            head = new Node(data);
+            System.out.println(head.data);
+            return;
+        }
+
+        Node current = head;
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.next = new Node(data);
+    }
+
     /**
      * Inserts the specified element at the beginning of this list.
      *
-     * @param      data  The data
+     * @param data  The data
      */
-    public void addFirst(String data){}
+    public void addFirst(String data){
+        Node temp = new Node(data);
+
+        temp.next = head;
+        head = temp;
+    }
+
     /**
      * Removes all of the elements from this list.
      */
-    public void clear() {}
+    public void clear() {
+        head = null;
+    }
+
     /**
      * Returns true if this list contains the specified element.
      *
@@ -29,7 +55,18 @@ class MyLinkedList {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean contains(String data) { return false; }
+    public boolean contains(String data) {
+        Node current = head;
+        while (current != null) {
+            if (current.data.equals(data)) {
+                return true;
+            } else {
+                current = current.next;
+            }
+        }
+        return false;
+    }
+
     /**
      * Returns the element at the specified position in this list.
      *
@@ -37,19 +74,49 @@ class MyLinkedList {
      *
      * @return     { description_of_the_return_value }
      */
-    public String get(int index){ return null; }
+    public String get(int index){
+        if (index > 0) {
+            Node current = head;
+            int i = 0;
+            while (current.next != null) {
+                if (index == i) {
+                    return current.data;
+                }
+                i += 1;
+            }
+        }
+        return null;
+    }
+
     /**
      * Returns the first element in this list.
      *
      * @return     The first.
      */
-    public String getFirst() { return null; }
+    public String getFirst() {
+        if (head != null) {
+            return head.data;
+        }
+        return null;
+    }
+
     /**
      * Returns the last element in this list.
      *
      * @return     The last.
      */
-    public String getLast() { return null; }
+    public String getLast() {
+        Node current = head;
+        while (true) {
+            if(current.next == null) {
+                break;
+            } else {
+                current = current.next;
+            }
+        }
+        return current.data;
+    }
+
     /**
      * Retrieves and removes the head (first element) of this list.
      *
@@ -73,5 +140,18 @@ class MyLinkedList {
      *
      * @return     String representation of the object.
      */
-    public String toString() { return ""; }
+    public String toString() {
+        if (head == null) {
+            return "";
+        }
+
+        String output = "";
+        Node current = head;
+        while (current.next != null) {
+            String temp = "[" + current.data + "]";
+            output += temp;
+            current = current.next;
+        }
+        return output;
+    }
 }
