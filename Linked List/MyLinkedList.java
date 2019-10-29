@@ -18,7 +18,6 @@ public class MyLinkedList {
     public void add(String data){
         if (head == null) {
             head = new Node(data);
-            System.out.println(head.data);
             return;
         }
 
@@ -75,10 +74,10 @@ public class MyLinkedList {
      * @return     { description_of_the_return_value }
      */
     public String get(int index){
-        if (index > 0) {
+        if (index >= 0) {
             Node current = head;
             int i = 0;
-            while (current.next != null) {
+            while (current != null) {
                 if (index == i) {
                     return current.data;
                 }
@@ -106,6 +105,10 @@ public class MyLinkedList {
      * @return     The last.
      */
     public String getLast() {
+        if (head == null) {
+            return null;
+        }
+
         Node current = head;
         while (true) {
             if(current.next == null) {
@@ -122,19 +125,55 @@ public class MyLinkedList {
      *
      * @return     { description_of_the_return_value }
      */
-    public String remove() { return null; }
+    public String remove() {
+        if (head == null) {
+            return null;
+        }
+        Node temp = head;
+        head = head.next;
+        return temp.data;
+    }
     /**
      * Removes and returns the last element from this list.
      *
      * @return     { description_of_the_return_value }
      */
-    public String removeLast() { return null; }
+    public String removeLast() {
+        if (head == null) {
+            return null;
+        }
+
+        if (head.next == null) {
+            head = null;
+            return null;
+        }
+
+        Node current = head;
+        Node temp;
+        while (current.next.next != null) {
+            current = current.next;
+        }
+        temp = current.next;
+        current.next = null;
+        return temp.data;
+    }
     /**
      * Returns the number of elements in this list.
      *
      * @return     { description_of_the_return_value }
      */
-    public int size() { return 0; }
+    public int size() {
+        if (head == null) {
+            return 0;
+        }
+        int count = 0;
+        Node current = head;
+        while (current != null) {
+            current = current.next;
+            count += 1;
+        }
+        return count;
+    }
     /**
      * Returns a string representation of the object.
      *
@@ -142,12 +181,12 @@ public class MyLinkedList {
      */
     public String toString() {
         if (head == null) {
-            return "";
+            return "LinkedList is empty";
         }
 
         String output = "";
         Node current = head;
-        while (current.next != null) {
+        while (current != null) {
             String temp = "[" + current.data + "]";
             output += temp;
             current = current.next;
