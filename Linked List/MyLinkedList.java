@@ -133,6 +133,7 @@ public class MyLinkedList {
         head = head.next;
         return temp.data;
     }
+
     /**
      * Removes and returns the last element from this list.
      *
@@ -157,6 +158,7 @@ public class MyLinkedList {
         current.next = null;
         return temp.data;
     }
+
     /**
      * Returns the number of elements in this list.
      *
@@ -174,6 +176,7 @@ public class MyLinkedList {
         }
         return count;
     }
+
     /**
      * Returns a string representation of the object.
      *
