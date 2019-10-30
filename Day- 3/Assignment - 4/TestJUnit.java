@@ -56,8 +56,10 @@ public class TestJUnit {
   @Test
   public void testCase6(){
     Team[] teams = {new Team("England",10,14,1), new Team("India",10,14,2),new Team("Australia",10,14,3), new Team("SouthAfrica",10,14,4), new Team("Bangladesh",10,14,5), new Team("Zimbabwe",10,14,6), new Team("Ireland",10,14,7)};
-    Team[] res = {new Team("Ireland",10,14,7),new Team("Zimbabwe",10,14,6), new Team("Bangladesh",10,14,5), new Team("SouthAfrica",10,14,4), new Team("Australia",10,14,3), new Team("India",10,14,2), new Team("England",0,2,3)};
+    Team[] res = {new Team("Ireland",10,14,7),new Team("Zimbabwe",10,14,6), new Team("Bangladesh",10,14,5), new Team("SouthAfrica",10,14,4), new Team("Australia",10,14,3), new Team("India",10,14,2), new Team("England",10,14,1)};
     Solution s = new Solution();
+    System.out.println(Arrays.toString(res));
+    System.out.println(Arrays.toString(s.sort(teams)));
     Assert.assertEquals(Arrays.toString(res), Arrays.toString(s.sort(teams)));
   }
 
