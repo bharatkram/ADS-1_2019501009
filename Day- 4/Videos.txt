@@ -1,0 +1,3 @@
+http://iiitdev.msitprogram.net/videos/merge_sort.mp4
+http://iiitdev.msitprogram.net/videos/quicksort.mp4
+http://iiitdev.msitprogram.net/videos/selection.mp4
