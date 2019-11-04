@@ -1,4 +1,13 @@
-class Solution{
+final class Solution{
+
+	private Solution() {}
+
+	/**
+	 * function to check the condition for minimum heap.
+	 *
+	 * @param arr the array to be checked for.
+	 * @return true if array is a MinHeap, else false.
+	 */
 	public static boolean isMinHeap(double[] arr){
 		if (arr.length == 0) {
 			return false;
