@@ -1,0 +1,2 @@
+if the tree is totally skewed to one side, the space occupied by this method is more as it
+needs to occupy space for the null values also on the other side.
