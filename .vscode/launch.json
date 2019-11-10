@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - RansomNote",
+            "request": "launch",
+            "mainClass": "RansomNote",
+            "projectName": "ADS-1_2019501009_3aba6eba"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - arrayImplementation",
             "request": "launch",
             "mainClass": "arrayImplementation",
