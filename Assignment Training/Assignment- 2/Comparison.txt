@@ -1,7 +1,7 @@
-que implementation in arrays:
+comparison to que implementation in arrays:
 -  would be a waste of memory as the first element has to be made null everytime we deque.
 - if taken two variables head and last and implemented, we have a problem of resizing when array is full.
 
-que implementation in linked list:
+comparison to que implementation in linked list:
 - we have to take two fields first and last(for constant time complexity during enque) which would be one field more
     for the same time complexity as here(waste of memory again).
