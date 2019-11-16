@@ -1,3 +1,7 @@
+/**
+ * class to store the credentials of the card.
+ * @author Bharat Ram Koppu.
+ */
 public class Card implements Comparable<Card> {
     int rank;
     int deck;

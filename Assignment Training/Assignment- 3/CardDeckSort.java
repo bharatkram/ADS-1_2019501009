@@ -1,3 +1,7 @@
+/**
+ * class to sort the deck in the req. order.
+ * @author Bharat Ram Koppu.
+ */
 public class CardDeckSort {
     Card[] cards;
 
