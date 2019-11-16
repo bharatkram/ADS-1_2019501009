@@ -10,6 +10,7 @@ public class CardDeckSort {
             }
         }
 
+        StdRandom.shuffle(cards);
         // for (int i = 0; i < 52; i++) {
         //     System.out.println(cards[i].display());
         // }
