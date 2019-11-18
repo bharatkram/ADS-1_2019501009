@@ -1,5 +1,10 @@
 import java.util.Comparator;
-// import edu.princeton.cs.algs4.StdDraw;
+import java.lang.NullPointerException;
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.StdDraw;
+import edu.princeton.cs.algs4.StdRandom;
+
 
 public class Point implements Comparable<Point> {
 
@@ -48,10 +53,15 @@ public class Point implements Comparable<Point> {
      * @return slope between this point and the specified point.
      */
     public double slopeTo(Point that) {
-        if (this.x == that.x) {
-            return Double.POSITIVE_INFINITY;
-        } else if (this.x == that.x && this.y == that.y) {
+        if (that == null) {
+            throw new NullPointerException();
+        }
+        if (this.x == that.x && this.y == that.y) {
             return Double.NEGATIVE_INFINITY;
+        } else if (this.x == that.x) {
+            return Double.POSITIVE_INFINITY;
+        } else if (that.y == this.y) {
+            return 0.0;
         }
         return (double) (that.y - this.y) / (that.x - this.x);
     }
@@ -74,7 +84,15 @@ public class Point implements Comparable<Point> {
 
     private class CompareSlope implements Comparator<Point> {
         public int compare(Point one, Point two) {
-            return (int) (slopeTo(one) - slopeTo(two));
+            if (one == null || two == null) {
+                throw new NullPointerException();
+            } else if (slopeTo(one) == slopeTo(two)) {
+                return 0;
+            } else if (slopeTo(one) < slopeTo(two)) {
+                return -1;
+            } else {
+                return 1;
+            }
         }
     }
 
