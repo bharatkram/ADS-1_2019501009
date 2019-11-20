@@ -70,7 +70,7 @@ public class BinaryTree {
      *
      * @return true if the rules are followed, else false.
      */
-    public boolean check(Node root, int min, int max) {
+    public boolean isOrdered(Node root, int min, int max) {
         if (root == null) {
             return true;
         } else if (root.key < min || root.key > max) {
@@ -80,11 +80,11 @@ public class BinaryTree {
 
         boolean flag = true;
 
-        flag = check(root.left, min, root.key);
+        flag = isOrdered(root.left, min, root.key);
         if (!flag) {
             return false;
         }
-        flag = check(root.right, root.key, max);
+        flag = isOrdered(root.right, root.key, max);
         return flag;
     }
 
@@ -109,7 +109,7 @@ public class BinaryTree {
             i += 1;
         }
 
-        if (tree.check(tree.root, 0, 20)) {
+        if (tree.isOrdered(tree.root, 0, 20)) {
             System.out.println("Correct.");
         } else {
             System.out.println("InCorrect.");
