@@ -37,24 +37,35 @@ public class FastCollinearPoints {
         ArrayList<LineSegment> linesArray = new ArrayList<LineSegment>();
 
         Point[] temp = Arrays.copyOf(points, points.length);
-
+        Arrays.sort(points);
         for (int i = 0; i < points.length; i++) {
-            Arrays.sort(points);
             Arrays.sort(temp, points[i].slopeOrder());
             int count = 1;
+            boolean flag = true;
+            // System.out.println(points[i]);
             for (int j = 0; j < temp.length - 1; j++) {
+                // System.out.println(flag);
                 // System.out.println(points[i].slopeTo(temp[j]) + " " + points[i].slopeTo(temp[j + 1]));
+                // System.out.println(temp[j]);
                 if (points[i].slopeTo(temp[j]) == points[i].slopeTo(temp[j + 1])) {
+                    if(points[i].compareTo(temp[j + 1]) > 0) {
+                        flag = false;
+                        // System.out.println("here1");
+                    }
                     // System.out.println(count);
                     count += 1;
-                    if (count >= 4 && j == temp.length - 2){
+                    if (count >= 4 && j == temp.length - 2 && flag){
+                        // System.out.println(points[i] + " " + temp[j + 1]);
                         linesArray.add(new LineSegment(points[i], temp[j + 1]));
                     }
-                } else if (count >= 4) {
+                } else if (count >= 4 && flag) {
+                    // System.out.println("here" + points[i] + " " + temp[j]);
                     linesArray.add(new LineSegment(points[i], temp[j]));
                     count = 1;
+                    flag = true;
                 } else {
                     count = 1;
+                    flag = true;
                 }
             }
             // System.out.println("\n");
