@@ -1,9 +1,9 @@
 import java.util.Comparator;
 import java.lang.NullPointerException;
-import edu.princeton.cs.algs4.StdIn;
-import edu.princeton.cs.algs4.StdOut;
-import edu.princeton.cs.algs4.StdDraw;
-import edu.princeton.cs.algs4.StdRandom;
+// import edu.princeton.cs.algs4.StdIn;
+// import edu.princeton.cs.algs4.StdOut;
+// import edu.princeton.cs.algs4.StdDraw;
+// import edu.princeton.cs.algs4.StdRandom;
 
 
 public class Point implements Comparable<Point> {

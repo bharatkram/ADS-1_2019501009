@@ -40,7 +40,7 @@ public class FastCollinearPoints {
         Arrays.sort(points);
         for (int i = 0; i < points.length; i++) {
             Arrays.sort(temp, points[i].slopeOrder());
-            int count = 1;
+            int count = 2;
             boolean flag = true;
             // System.out.println(points[i]);
             for (int j = 0; j < temp.length - 1; j++) {
@@ -61,10 +61,10 @@ public class FastCollinearPoints {
                 } else if (count >= 4 && flag) {
                     // System.out.println("here" + points[i] + " " + temp[j]);
                     linesArray.add(new LineSegment(points[i], temp[j]));
-                    count = 1;
+                    count = 2;
                     flag = true;
                 } else {
-                    count = 1;
+                    count = 2;
                     flag = true;
                 }
             }
@@ -82,33 +82,33 @@ public class FastCollinearPoints {
         return lines;
     }
 
-    // public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    //     // read the n points from a file
-    //     In in = new In(args[0]);
-    //     int n = in.readInt();
-    //     Point[] points = new Point[n];
-    //     for (int i = 0; i < n; i++) {
-    //         int x = in.readInt();
-    //         int y = in.readInt();
-    //         points[i] = new Point(x, y);
-    //     }
+        // read the n points from a file
+        In in = new In(args[0]);
+        int n = in.readInt();
+        Point[] points = new Point[n];
+        for (int i = 0; i < n; i++) {
+            int x = in.readInt();
+            int y = in.readInt();
+            points[i] = new Point(x, y);
+        }
 
-    //     // draw the points
-    //     StdDraw.enableDoubleBuffering();
-    //     StdDraw.setXscale(0, 32768);
-    //     StdDraw.setYscale(0, 32768);
-    //     for (Point p : points) {
-    //         p.draw();
-    //     }
-    //     StdDraw.show();
+        // draw the points
+        StdDraw.enableDoubleBuffering();
+        StdDraw.setXscale(0, 32768);
+        StdDraw.setYscale(0, 32768);
+        for (Point p : points) {
+            p.draw();
+        }
+        StdDraw.show();
     
-    //     // print and draw the line segments
-    //     FastCollinearPoints collinear = new FastCollinearPoints(points);
-    //     for (LineSegment segment : collinear.segments()) {
-    //         StdOut.println(segment);
-    //         segment.draw();
-    //     }
-    //     StdDraw.show();
-    // }
+        // print and draw the line segments
+        FastCollinearPoints collinear = new FastCollinearPoints(points);
+        for (LineSegment segment : collinear.segments()) {
+            StdOut.println(segment);
+            segment.draw();
+        }
+        StdDraw.show();
+    }
 }
